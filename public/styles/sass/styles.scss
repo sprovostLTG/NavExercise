@@ -3,6 +3,8 @@
 // ********************
 //       COLORS
 // ********************
+$white: #fff;
+$black: #000;
 $mag : #ec008c;
 $lg : #eee;
 $tlb : rgba(0,0,0,0.5);
@@ -11,11 +13,20 @@ $tlb : rgba(0,0,0,0.5);
 .lg{color: $lg;}
 .tlb{color: $tlb;}
 
+.container{max-width: 968px;}
+
 body { 
-  background: #ec008c; color: #fff;
+  background: $mag; color: $white;
   h1 {
     position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
     margin: 0;font: 20vmin/1 HUGEAvantGardeBold;letter-spacing: -0.06em;text-align: center;
   }
+}
+
+// **********************
+//       RESPONSIVE
+// **********************
+@media screen and (max-width: 768){
+
 }
 
