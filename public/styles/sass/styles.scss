@@ -9,6 +9,17 @@ $mag : #ec008c;
 $lg : #eee;
 $tlb : rgba(0,0,0,0.5);
 
+
+// ********************
+//       TYPE
+// ********************
+$pnav : 21px/48px HUGEAvantGardeBold;
+$snav : 16px/48px Galaxie;
+$hldesk : 120px/132px HUGEAvantGardeBold;
+$bdesk : 24px/36px Galaxie;
+$hlmob : 44px/48px HUGEAvantGardeBold;
+$bmob : 14px/24px Galaxie;
+
 .mag{color: $mag;}
 .lg{color: $lg;}
 .tlb{color: $tlb;}
@@ -19,7 +30,7 @@ body {
   background: $mag; color: $white;
   h1 {
     position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
-    margin: 0;font: 20vmin/1 HUGEAvantGardeBold;letter-spacing: -0.06em;text-align: center;
+    margin: 0;font: $hldesk; letter-spacing: -0.06em;text-align: center;
   }
 }
 
