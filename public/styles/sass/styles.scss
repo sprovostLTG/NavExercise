@@ -50,9 +50,16 @@ body {
 // **********************
 //       NAVIGATION
 // **********************
-.menuToggle{display:none;}
-#open{position: fixed; top: 0; @include transition(all, .3s); opacity: 1;}
-#close{position: fixed; top: 0; @include transition(all, .3s); opacity: 0;}
+.menuToggle{
+	display:none;
+	.tog{position: fixed; top: 0;  }
+	#open{@include transition(all, .3s); opacity: 1;}
+	#close{@include transition(all, .3s); opacity: 0;}
+}
+.menuToggle.open{
+	#open{opacity: 0;}
+	#close{opacity: 1;}
+}
 .header{
 	position: fixed; background: $mag; width: 100%; top: 0; height: 72px;
 	#nav{

@@ -1,9 +1,9 @@
 @-webkit-keyframes slideRight{
-	from{-webkit-transform: rotate(0deg);}
-	to{-webkit-transform: rotate(360deg); right: 0;}
+	from{left: 0 !important;}
+	to{right: 0 !important;}
 }
 
 @keyframes slideRight{
-	from{transform: rotate(0deg)}
-	to{transform: rotate(360deg); right: 0;}
+	from{left: 0 !important;}
+	to{right: 0 !important;}
 }
