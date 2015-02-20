@@ -34,6 +34,7 @@ $legal : 12/16 Helvetica;
 
 //a{ @include transition(all, .2s); }
 .sr{@include animation(slideRight, .3s cubic-bezier(.12,.72,.36,.99));}
+.negMarg{@include transform(translateX, -100%);}
 .fullopacity{opacity: 1;}
 .noopacity{opacity: 0;}
 
@@ -50,8 +51,8 @@ body {
 //       NAVIGATION
 // **********************
 .menuToggle{display:none;}
-.open{position: absolute; top: 0; @include transition(all, .3s); opacity: 1;}
-.close{position: absolute; top: 0; @include transition(all, .3s); opacity: 0;}
+#open{position: fixed; top: 0; @include transition(all, .3s); opacity: 1;}
+#close{position: fixed; top: 0; @include transition(all, .3s); opacity: 0;}
 .header{
 	position: fixed; background: $mag; width: 100%; top: 0; height: 72px;
 	#nav{
@@ -87,7 +88,7 @@ body {
 //       MOBILE NAV
 // **********************
 #resNav{
-	position: fixed; top: 72px; background-color: $white; @include transform(translateX, -100%); @include transition(all, .2s cubic-bezier(.12,.72,.36,.99));
+	position: fixed; top: 72px; background-color: $white; @include transition(all, .2s cubic-bezier(.12,.72,.36,.99));
 	#dLogo{display: none;}
 	ul{
 		list-style: none; width: 248px;

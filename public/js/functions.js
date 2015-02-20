@@ -39,5 +39,30 @@ $(document).ready(function(){
 		var winHeight = $(window).height();
 		$('#resNav').css('height', winHeight - 72 + 'px');
 	});
+
+	$('.menuToggle').click(function(){
+		if( $('#resNav').hasClass('negMarg') ){
+			$('#resNav').removeClass('negMarg');
+		} else {
+			$('#resNav').addClass('negMarg');
+		}
+
+		// if( $('#open').hasClass('fullopacity') ){
+		// 	$('#open').removeClass('fullopacity');
+		// 	$('#open').addClass('noopacity');
+		// } else {
+		// 	$('#open').addClass('fullopacity');
+		// 	$('#open').removeClass('noopacity');
+		// }
+
+		// if( $('#close').hasClass('fullopacity') ){
+		// 	$('#close').removeClass('fullopacity');
+		// 	$('#close').addClass('noopacity');
+		// } else {
+		// 	$('#close').addClass('fullopacity');
+		// 	$('#close').removeClass('noopacity');
+		// }
+		return false;
+	});
 	
 });
