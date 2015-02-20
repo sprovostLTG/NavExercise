@@ -1,4 +1,5 @@
-@import "fonts.scss";
+@import "fonts";
+@import "mixins";
 
 // ********************
 //       COLORS
@@ -24,14 +25,52 @@ $bmob : 14px/24px Galaxie;
 .lg{color: $lg;}
 .tlb{color: $tlb;}
 
-.container{max-width: 968px;}
+.tab{display: table; height: 100%;}
+.tabc{display: table-cell; vertical-align: middle;}
+
+.container{max-width: 968px; margin: auto;}
+
+//a{ @include transition(all, .2s); }
 
 body { 
-  background: $mag; color: $white;
-  h1 {
-    position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
-    margin: 0;font: $hldesk; letter-spacing: -0.06em;text-align: center;
+	margin: 0;
+  #feat{
+  	height: 640px; width: 100%; margin-top: 74px; background: url('/images/background-image.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; color: $white;
+  	h1{vertical-align: middle; text-align: center; font: $hldesk; letter-spacing: -0.06em; width: 100%;}
   }
+  .content{padding: 60px; font: $bdesk;}
+}
+
+// **********************
+//       NAVIGATION
+// **********************
+#nav{
+	position: fixed; background: $mag; width: 100%; top: 0;
+	#dLogo{float: left; width: 60px; padding: 24px 42px 24px 24px;}
+	ul{
+		list-style: none; margin: 0; height: 74px;
+		li{
+			float: left;
+			a{
+				display: inline-block; font: $pnav; text-decoration: none; color: white; padding: 0 24px; line-height: 74px;
+			}
+			.sub{
+				display: none; height: auto; position: absolute; padding-left: 0; background-color: $white; padding: 12px 0;
+				li{
+					float: none;
+					a{
+						color: $black; display: block; font: $snav;
+						&:hover{background-color: $lg; color: $mag;}
+					}
+				}
+			}
+			&:hover{
+				a{background-color: $white; color: $mag; }
+				>ul.sub{display:block;}
+			}
+		}
+		
+	}
 }
 
 // **********************
