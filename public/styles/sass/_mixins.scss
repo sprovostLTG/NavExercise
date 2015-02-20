@@ -2,3 +2,13 @@
 	-webkit-transition: $kind $time;
 	transition: $kind $time;
 }
+
+@mixin transform($kind, $args){
+	-webkit-transform: $kind + '(' + $args + ')'; 
+	transform: $kind + '(' + $args + ')'; 
+}
+
+@mixin animation($name, $args){
+	-webkit-animation: $name $args;
+	animation: $name $args;
+}
