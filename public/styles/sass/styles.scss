@@ -34,6 +34,7 @@ $legal : 12/16 Helvetica;
 
 //a{ @include transition(all, .2s); }
 .sr{@include animation(slideRight, .3s cubic-bezier(.12,.72,.36,.99));}
+.flip{@include transform(rotate, 180deg);}
 .negMarg{@include transform(translateX, -100%);}
 .fullopacity{opacity: 1;}
 .noopacity{opacity: 0;}
@@ -60,6 +61,7 @@ body {
 	#open{opacity: 0;}
 	#close{opacity: 1;}
 }
+.resSubDisp{position: absolute;right: 0;padding: 0 24px; line-height: 48px; color: $mag !important; display: none !important; top: 0; @include transition(all, .3s);}
 .header{
 	position: fixed; background: $mag; width: 100%; top: 0; height: 72px;
 	#nav{
@@ -98,10 +100,12 @@ body {
 	position: fixed; top: 72px; background-color: $white; @include transition(all, .2s cubic-bezier(.12,.72,.36,.99));
 	#dLogo{display: none;}
 	ul{
-		list-style: none; width: 248px;
+		list-style: none; width: 248px; padding-left: 0;
 		li{
+			position: relative;
+			&:hover{background-color: $lg;}
 			a{
-				font: $pnav; color: $black; text-decoration: none;
+				font: $pnav; color: $black; text-decoration: none; padding-left: 24px; display: block;
 			}
 			.sub{
 				display: none;
@@ -117,6 +121,7 @@ body {
 // **********************
 @media screen and (max-width: 941px){
 	.menuToggle{display: block;}
+	.resSubDisp{display: block !important;}
 	.header{
 		#nav{
 			#dLogo{display: none;}
@@ -124,4 +129,14 @@ body {
 		}
 	}
 }
+@media screen and (max-width: 599px){
+	body{
+		#feat{
+			height: 240px;
+			h1{display: none;}
+		}
+		.content{padding: 30px 15px;}
+	}
+}
+
 

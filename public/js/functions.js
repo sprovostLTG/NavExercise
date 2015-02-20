@@ -12,6 +12,7 @@ $(document).ready(function(){
 			output += '<li><a href="' + topNav.url + '">'; 
 			output += topNav.label + '</a>';
 			if( topNav.items.length ){
+				output += '<div class="resSubDisp" href="#"><i class="fa fa-chevron-down"></i></div>';
 				output += '<ul class="sub">';
 				for(var j = 0; j < topNav.items.length; j++){
 					var subli = topNav.items[j];
@@ -30,6 +31,10 @@ $(document).ready(function(){
 
 	});
 
+	$('.resSubDisp').on('click', function(){
+		alert('hi!');
+	});
+
 	//Handle responsive menu height
 	var winHeight = $(window).height();
 
@@ -40,6 +45,7 @@ $(document).ready(function(){
 		$('#resNav').css('height', winHeight - 72 + 'px');
 	});
 
+	//handle the menu toggling
 	$('.menuToggle').click(function(){
 		var winWidth = $(window).width() - 72;
 		$this = $(this);
@@ -66,5 +72,7 @@ $(document).ready(function(){
 
 		return false;
 	});
+
+
 	
 });
