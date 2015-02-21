@@ -21,7 +21,7 @@ $hldesk : 120px/132px HUGEAvantGardeBold;
 $bdesk : 24px/36px Galaxie;
 $hlmob : 44px/48px HUGEAvantGardeBold;
 $bmob : 14px/24px Galaxie;
-$legal : 12/16 Helvetica;
+$legal : 12px/16px Helvetica;
 
 .mag{color: $mag;}
 .lg{color: $lg;}
@@ -36,16 +36,31 @@ $legal : 12/16 Helvetica;
 .sr{@include animation(slideRight, .3s cubic-bezier(.12,.72,.36,.99));}
 .flip{@include transform(rotate, 180deg);}
 .negMarg{@include transform(translateX, -100%);}
+.logoPull{}
+.bodyMove{@include transform(translateX, 248px);}
 .fullopacity{opacity: 1;}
 .noopacity{opacity: 0;}
 
+.page{@include transition(all, .3s); }
+
+.mask{position: fixed;width: 100%;height: 100%;background-color: $tlb; display: none;}
+.abs{position: absolute};
+.rel{position: relative};
+.open{display: block !important;}
+
+// **********************
+//      FRONT PAGE
+// **********************
 body { 
 	margin: 0;
   #feat{
   	height: 640px; width: 100%; margin-top: 72px; background: url('/images/background-image.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; color: $white;
   	h1{vertical-align: middle; text-align: center; font: $hldesk; letter-spacing: -0.06em; width: 100%;}
   }
-  .content{padding: 60px; font: $bdesk;}
+  .content{
+  	padding: 60px; font: $bdesk;
+  	.resTitle{display: none; margin: 0 0 50px;}
+  }
 }
 
 // **********************
@@ -53,7 +68,7 @@ body {
 // **********************
 .menuToggle{
 	display:none;
-	.tog{position: fixed; top: 0;  }
+	.tog{position: fixed; top: 0;  z-index: 9999;}
 	#open{@include transition(all, .3s); opacity: 1;}
 	#close{@include transition(all, .3s); opacity: 0;}
 }
@@ -63,9 +78,9 @@ body {
 }
 .resSubDisp{position: absolute;right: 0;padding: 0 24px; line-height: 48px; color: $mag !important; display: none !important; top: 0; @include transition(all, .3s);}
 .header{
-	position: fixed; background: $mag; width: 100%; top: 0; height: 72px;
+	position: fixed; background: $mag; width: 100%; top: 0; height: 72px; z-index: 999;
 	#nav{
-		#dLogo{float: left; width: 60px; padding: 24px 42px 24px 24px;}
+		#dLogo{float: left; width: 60px; padding: 24px 42px 24px 24px; @include transition(all, .3s);}
 		ul{
 			list-style: none; margin: 0; height: 72px;
 			li{
@@ -85,7 +100,7 @@ body {
 				}
 				&:hover{
 					a{background-color: $white; color: $mag; }
-					>ul.sub{display:block;}
+					//>ul.sub{display:block;}
 				}
 			}
 			
@@ -97,22 +112,31 @@ body {
 //       MOBILE NAV
 // **********************
 #resNav{
-	position: fixed; top: 72px; background-color: $white; @include transition(all, .2s cubic-bezier(.12,.72,.36,.99));
-	#dLogo{display: none;}
+	position: fixed; top: 72px; background-color: $white; @include transition(all, .2s cubic-bezier(.12,.72,.36,.99)); overflow-y: scroll;
+	#dLogo{display: none; @include transition(all, .2s cubic-bezier(.12,.72,.36,.99));}
 	ul{
 		list-style: none; width: 248px; padding-left: 0;
 		li{
 			position: relative;
-			&:hover{background-color: $lg;}
 			a{
 				font: $pnav; color: $black; text-decoration: none; padding-left: 24px; display: block;
+				&:hover{background-color: $lg;}
+			}
+			.resSubDisp{
+				&:hover{background-color: transparent;}
 			}
 			.sub{
 				display: none;
+				li{
+					a{
+						font: $snav;
+						&:hover{background-color: $lg; color: $mag;}
+					}
+				}
 			}
 		}
 	}
-	.legal{font: $legal; padding-left: 24px; line-height: 48px; position: absolute; bottom: 0;}
+	#legal{font: $legal; padding-left: 24px; line-height: 48px; bottom: 0;@include transition(all, .2s)}
 }
 
 
@@ -120,11 +144,12 @@ body {
 //       RESPONSIVE
 // **********************
 @media screen and (max-width: 941px){
+	.logoPull{@include transform(translateX, -120%);}
 	.menuToggle{display: block;}
 	.resSubDisp{display: block !important;}
 	.header{
 		#nav{
-			#dLogo{display: none;}
+			//#dLogo{@include transform(translateX, -120%);}
 			ul{display: none;}
 		}
 	}
@@ -135,7 +160,10 @@ body {
 			height: 240px;
 			h1{display: none;}
 		}
-		.content{padding: 30px 15px;}
+		.content{
+			padding: 60px 24px; font: $bmob;
+			.resTitle{display: block; font: $hlmob;}
+		}
 	}
 }
 
