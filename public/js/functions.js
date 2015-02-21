@@ -54,7 +54,7 @@ $(document).ready(function(){
 			var navHeight = $('#resNav ul').height();
 			var currentWinHeight = $(window).height() - 72;
 			//alert('navigation: ' + navHeight + '. window: ' + currentWinHeight);
-			if (winHeight > navHeight){
+			if (currentWinHeight < navHeight){
 				$('#legal').addClass('rel');
 				$('#legal').removeClass('abs');
 			} else {
@@ -111,6 +111,7 @@ $(document).ready(function(){
 			$('.menuToggle').children('#open').removeAttr('style', 'transform:translateX('+ winWidth +'px);');
 			$('.menuToggle').children('#close').removeAttr('style', '-webkit-transform:translateX('+ winWidth +'px);');
 			$('.menuToggle').children('#close').removeAttr('style', 'transform:translateX('+ winWidth +'px);');
+			$('.mask').fadeOut(300);
 		} else {
 			$('.menuToggle').addClass('open');
 			$('.menuToggle').children('#open').attr('style', '-webkit-transform:translateX('+ winWidth +'px);');
