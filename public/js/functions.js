@@ -52,14 +52,14 @@ $(document).ready(function(){
 		//check height of responsive menu and handle the legal copy
 		function resMenuHeightCheck(){
 			var navHeight = $('#resNav ul').height();
-			var currentWinHeight = $(window).height() - 72;
+			var currentWinHeight = $(window).height() - 78;
 			//alert('navigation: ' + navHeight + '. window: ' + currentWinHeight);
-			if (currentWinHeight < navHeight){
-				$('#legal').addClass('rel');
-				$('#legal').removeClass('abs');
-			} else {
+			if (currentWinHeight > navHeight){
 				$('#legal').addClass('abs');
 				$('#legal').removeClass('rel');
+			} else {
+				$('#legal').addClass('rel');
+				$('#legal').removeClass('abs');
 			}
 		}
 
