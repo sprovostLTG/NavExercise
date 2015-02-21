@@ -144,12 +144,8 @@ body {
 //       RESPONSIVE
 // **********************
 @media screen and (max-width: 941px){
-	// .logoPull{@include transform(translateX, -120%);}
-	// .menuToggle{display: block;}
-	// .resSubDisp{display: block !important;}
 	.header{
 		#nav{
-			//#dLogo{@include transform(translateX, -120%);}
 			ul{
 				li{
 					a{padding: 0 10px;}
@@ -164,7 +160,6 @@ body {
 	.resSubDisp{display: block !important;}
 	.header{
 		#nav{
-			//#dLogo{@include transform(translateX, -120%);}
 			ul{display: none;}
 		}
 	}

@@ -72,6 +72,7 @@ $(document).ready(function(){
 				$(this).addClass('flip');
 			}
 			$(this).siblings('ul').slideToggle('fast', resMenuHeightCheck() );
+			return false;
 			
 		});
 
