@@ -36,6 +36,7 @@ $(document).ready(function(){
 				    $(this).children(".prime").click(function () {
 				    	$('.sub').removeClass('open');
 				    	$(this).siblings('ul').addClass('open');
+				    	$('.mask').fadeIn();
 				       	event.preventDefault();
 				    });
 				});
